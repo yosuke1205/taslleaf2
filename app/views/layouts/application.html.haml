@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title taskleaf
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css")
+    .container
+      - if flash.notice.present?
+        .alert.alert-sucess=flash.notice
+  
+    = yield
+
